@@ -1,14 +1,10 @@
-<%= simple_form_for(@engineer) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :fullname %>
-    <%= f.input :dependency %>
-    <%= f.input :studies %>
-    <%= f.association :proyect %>
-  </div>
-
+<%= simple_form_for [@proyect,@engineer], :html => {:class => 'form-horizontal'} do |f| %>
+    <%= f.input :fullname %><br>
+    <%= f.input :dependency %><br>
+    <%= f.input :studies %><br>
+    <%= f.input :proyect_id %><br>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel',:default => t("helpers.links.cancel")), proyect_engineers_path(@proyect), :class => 'btn' %>
   </div>
 <% end %>
