@@ -1,17 +1,25 @@
-       Prefix Verb   URI Pattern                   Controller#Action
-    engineers GET    /engineers(.:format)          engineers#index
-              POST   /engineers(.:format)          engineers#create
- new_engineer GET    /engineers/new(.:format)      engineers#new
-edit_engineer GET    /engineers/:id/edit(.:format) engineers#edit
-     engineer GET    /engineers/:id(.:format)      engineers#show
-              PATCH  /engineers/:id(.:format)      engineers#update
-              PUT    /engineers/:id(.:format)      engineers#update
-              DELETE /engineers/:id(.:format)      engineers#destroy
-     proyects GET    /proyects(.:format)           proyects#index
-              POST   /proyects(.:format)           proyects#create
-  new_proyect GET    /proyects/new(.:format)       proyects#new
- edit_proyect GET    /proyects/:id/edit(.:format)  proyects#edit
-      proyect GET    /proyects/:id(.:format)       proyects#show
-              PATCH  /proyects/:id(.:format)       proyects#update
-              PUT    /proyects/:id(.:format)       proyects#update
-              DELETE /proyects/:id(.:format)       proyects#destroy
+               Prefix Verb   URI Pattern                                        Controller#Action
+            engineers GET    /engineers(.:format)                               engineers#index
+                      POST   /engineers(.:format)                               engineers#create
+         new_engineer GET    /engineers/new(.:format)                           engineers#new
+        edit_engineer GET    /engineers/:id/edit(.:format)                      engineers#edit
+             engineer GET    /engineers/:id(.:format)                           engineers#show
+                      PATCH  /engineers/:id(.:format)                           engineers#update
+                      PUT    /engineers/:id(.:format)                           engineers#update
+                      DELETE /engineers/:id(.:format)                           engineers#destroy
+    proyect_engineers GET    /proyects/:proyect_id/engineers(.:format)          engineers#index
+                      POST   /proyects/:proyect_id/engineers(.:format)          engineers#create
+ new_proyect_engineer GET    /proyects/:proyect_id/engineers/new(.:format)      engineers#new
+edit_proyect_engineer GET    /proyects/:proyect_id/engineers/:id/edit(.:format) engineers#edit
+     proyect_engineer GET    /proyects/:proyect_id/engineers/:id(.:format)      engineers#show
+                      PATCH  /proyects/:proyect_id/engineers/:id(.:format)      engineers#update
+                      PUT    /proyects/:proyect_id/engineers/:id(.:format)      engineers#update
+                      DELETE /proyects/:proyect_id/engineers/:id(.:format)      engineers#destroy
+             proyects GET    /proyects(.:format)                                proyects#index
+                      POST   /proyects(.:format)                                proyects#create
+          new_proyect GET    /proyects/new(.:format)                            proyects#new
+         edit_proyect GET    /proyects/:id/edit(.:format)                       proyects#edit
+              proyect GET    /proyects/:id(.:format)                            proyects#show
+                      PATCH  /proyects/:id(.:format)                            proyects#update
+                      PUT    /proyects/:id(.:format)                            proyects#update
+                      DELETE /proyects/:id(.:format)                            proyects#destroy
