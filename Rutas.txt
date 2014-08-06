@@ -1,9 +1,17 @@
-      Prefix Verb   URI Pattern                  Controller#Action
-    proyects GET    /proyects(.:format)          proyects#index
-             POST   /proyects(.:format)          proyects#create
- new_proyect GET    /proyects/new(.:format)      proyects#new
-edit_proyect GET    /proyects/:id/edit(.:format) proyects#edit
-     proyect GET    /proyects/:id(.:format)      proyects#show
-             PATCH  /proyects/:id(.:format)      proyects#update
-             PUT    /proyects/:id(.:format)      proyects#update
-             DELETE /proyects/:id(.:format)      proyects#destroy
+       Prefix Verb   URI Pattern                   Controller#Action
+    engineers GET    /engineers(.:format)          engineers#index
+              POST   /engineers(.:format)          engineers#create
+ new_engineer GET    /engineers/new(.:format)      engineers#new
+edit_engineer GET    /engineers/:id/edit(.:format) engineers#edit
+     engineer GET    /engineers/:id(.:format)      engineers#show
+              PATCH  /engineers/:id(.:format)      engineers#update
+              PUT    /engineers/:id(.:format)      engineers#update
+              DELETE /engineers/:id(.:format)      engineers#destroy
+     proyects GET    /proyects(.:format)           proyects#index
+              POST   /proyects(.:format)           proyects#create
+  new_proyect GET    /proyects/new(.:format)       proyects#new
+ edit_proyect GET    /proyects/:id/edit(.:format)  proyects#edit
+      proyect GET    /proyects/:id(.:format)       proyects#show
+              PATCH  /proyects/:id(.:format)       proyects#update
+              PUT    /proyects/:id(.:format)       proyects#update
+              DELETE /proyects/:id(.:format)       proyects#destroy
