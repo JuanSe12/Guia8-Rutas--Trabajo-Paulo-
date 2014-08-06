@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Equipo</th>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -15,24 +14,29 @@
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @proyects.each do |proyect| %>
       <tr>
-        <td><%= link_to 'Equipo', proyect_engineers_path(proyect) %></td>
-        <td><%= proyect.id %></td>
-        <td><%= link_to proyect.name, proyect_path(proyect) %></td>
+        <td><%= link_to proyect.id, proyect_path(proyect) %></td>
+        <td><%= proyect.name %></td>
         <td><%= proyect.description %></td>
         <td><%= proyect.begindate %></td>
         <td><%= proyect.endate %></td>
         <td><%=l proyect.created_at %></td>
-        <td><%= link_to t('.edit', :default => t("helpers.links.edit")), edit_proyect_path(proyect), :class => 'btn btn-mini' %></td>
-        <td><%= link_to t('.destroy', :default => t("helpers.links.destroy")), proyect_path(proyect), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger' %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_proyect_path(proyect), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      proyect_path(proyect),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>
-<br>
 
-<%= link_to 'New Proyect', new_proyect_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_proyect_path,
+            :class => 'btn btn-primary' %>
