@@ -4,7 +4,7 @@ class EngineersController < ApplicationController
   # GET /engineers
   # GET /engineers.json
   def index
-    @engineers = @proyect.Engineer.all
+    @engineers = @proyect.engineers.all
   end
 
   # GET /engineers/1
@@ -65,7 +65,7 @@ class EngineersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_engineer
       @proyect = Proyect.find(params[:proyect_id])
-      @engineer = Engineer.find(params[:id])
+      @engineer = Engineer.find(params[:id]) if params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
