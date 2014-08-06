@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Equipo</th>
       <th>Name</th>
       <th>Description</th>
       <th>Begindate</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @proyects.each do |proyect| %>
       <tr>
+        <td><%= link_to 'Equipo', proyect_engineers_path(proyect) %></td>
         <td><%= proyect.name %></td>
         <td><%= proyect.description %></td>
         <td><%= proyect.begindate %></td>
