@@ -1,14 +1,10 @@
-<%= simple_form_for(@proyect) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
+<%= simple_form_for @proyect, :html => {:class => 'form-horizontal'} do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :begindate %>
-    <%= f.input :endate %>
-  </div>
-
+    <%= f.input :enddate %>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel',:default => t("helpers.links.cancel")), proyects_path, :class => 'btn' %>
   </div>
 <% end %>
